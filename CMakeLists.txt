@@ -16,4 +16,10 @@ add_executable(qqc2hello "main.cpp" "qml.qrc")
 
 target_link_libraries(qqc2hello Qt5::Core Qt5::Quick)
 
+install(
+    TARGETS qqc2hello
+    RUNTIME DESTINATION bin
+    LIBRARY DESTINATION lib
+)
+
 feature_summary(WHAT ALL FATAL_ON_MISSING_REQUIRED_PACKAGES)
