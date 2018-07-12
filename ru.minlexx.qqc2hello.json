@@ -1,0 +1,34 @@
+{
+    "app-id": "ru.minlexx.qqc2hello",
+    "runtime": "org.kde.Platform",
+    "runtime-version": "5.9",
+    "branch": "master",
+    "sdk": "org.kde.Sdk",
+    "command": "qqc2hello",
+
+    "modules": [
+        {
+            "name": "qqc2hello",
+            "buildsystem": "cmake",
+            "builddir": true,
+            "config-opts": [
+                "-DCMAKE_BUILD_TYPE=Relase"
+            ],
+            "sources": [
+                {
+                    "type": "git",
+                    "url": "https://github.com/minlexx/test_qqc2hello.git",
+                    "branch": "master"
+                }
+            ]
+        }
+    ],
+
+    "finish-args": [
+        "--share=ipc", "--socket=x11",
+        "--socket=wayland",
+        "--share=network",
+        "--device=dri",
+        "--socket=pulseaudio"
+    ]
+}
